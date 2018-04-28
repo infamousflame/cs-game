@@ -64,7 +64,7 @@ function startScreen(){
     ctx.fillStyle = "white";
     ctx.font = "200px Arial";
     ctx.fillText("Click the darn screen to start",0,height/2);
-    ctx.fillText("You win at 50 btw",0,height/1.5);
+    ctx.fillText("You win at 200 btw",0,height/1.5);
   }
 }
 
@@ -108,7 +108,7 @@ function update(progress) {
       if(balls[i].x > width){
         balls.splice(i, 1);
         userScore += 1;
-        if(userScore > 50){
+        if(userScore > 200){
           winGame();
         }
       }else if(balls[i].x < 0){

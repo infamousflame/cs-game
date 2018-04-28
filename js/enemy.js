@@ -18,8 +18,8 @@ function move(){
     }
   }
   if(enemyPaddle.y < closest.y){
-    enemyPaddle.y += 100;
+    enemyPaddle.y += 400;
   }else if(enemyPaddle.y > closest.y){
-    enemyPaddle.y -= 100;
+    enemyPaddle.y -= 400;
   }
 }
