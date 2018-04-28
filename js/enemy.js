@@ -17,9 +17,11 @@ function move(){
       closest = balls[i];
     }
   }
-  if(enemyPaddle.y < closest.y){
-    enemyPaddle.y += 400;
-  }else if(enemyPaddle.y > closest.y){
-    enemyPaddle.y -= 400;
+  if(((width - 20) - closest.x) < 300) {
+    if(enemyPaddle.y < closest.y){
+      enemyPaddle.y += 100;
+    }else if(enemyPaddle.y > closest.y){
+      enemyPaddle.y -= 100;
+    }
   }
 }

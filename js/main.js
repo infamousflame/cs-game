@@ -122,11 +122,10 @@ function update(progress) {
       }
     }
   }
-  move();
 }
 var limitLoop = function (fn, fps, isActive) {
       var then = new Date().getTime();
-      fps = fps || 60;
+      fps = fps || 60; //if fps is undefined it will change it to 60
       var interval = 1000 / fps;
       return (function loop(time){
           requestAnimationFrame(loop);
@@ -152,6 +151,7 @@ function isStart(){
   }else if(counter == 1){
     limitLoop(draw, 60);
     limitLoop(update, 60);
+    limitLoop(move, 60);
   }
 }
 isStart();
