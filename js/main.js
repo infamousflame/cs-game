@@ -3,7 +3,7 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var width;
 var height;
-var userScore = 100;
+var userScore = 0;
 var colors = ["Aqua", "white", "green", "blue", "Cornsilk", "DarkOrange", "DarkTurquoise", "MidnightBlue", "RebeccaPurple", "SeaGreen", "YellowGreen", "Teal"];
 var audio = new Audio("death.mp3");
 var counter = 0;
@@ -93,12 +93,16 @@ function update(progress) {
       collideBall = {x: ball.x, y: ball.y, width: ball.width, height: ball.height};
       collidePaddle = {x: 0, y: userPaddle.y, width: userPaddle.width, height: userPaddle.size};
       collideEnemy = {x: width - 20, y: enemyPaddle.y, width: 20, height: enemyPaddle.size};
-      if(collision(collidePaddle, collideBall)){
-        ball.xSpeed = -ball.xSpeed;
-        spawnBall(colors[Math.floor((Math.random() * colors.length))]);
-      }
+      // if(collision(collidePaddle, collideBall)){
+      //   ball.xSpeed = -ball.xSpeed;
+      //   spawnBall(colors[Math.floor((Math.random() * colors.length))]);
+      // }
       if(collision(collideEnemy, collideBall)){
         ball.xSpeed = -ball.xSpeed;
+      }
+      if(collideBall.x < 30 && collidePaddle.y - collidePaddle.height < collideBall.y && collidePaddle.y + collidePaddle.height > collideBall.y){
+        ball.xSpeed = -ball.xSpeed;
+        spawnBall(colors[Math.floor((Math.random() * colors.length))]);
       }
       if(balls[i].x > width){
         balls.splice(i, 1);
@@ -142,7 +146,6 @@ $("#canvas").on("click", function(){
   }
 });
 function isStart(){
-  console.log(counter);
   if(counter == 0){
     limitLoop(startScreen, 30);
   }else if(counter == 1){

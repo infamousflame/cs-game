@@ -2,7 +2,7 @@ var balls = [];
 function spawnBall(color){
   balls.push(
               {
-                x: userPaddle.width,
+                x: 40,
                 y: 200,
                 xSpeed: Math.floor((Math.random() * 20) + 5),
                 ySpeed: Math.floor((Math.random() * 10) + 1),
