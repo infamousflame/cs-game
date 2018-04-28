@@ -6,6 +6,7 @@ var height;
 var isRunning = false;
 var userScore = 0;
 var colors = ["Aqua", "white", "green", "blue", "Cornsilk", "DarkOrange", "DarkTurquoise", "MidnightBlue", "RebeccaPurple", "SeaGreen", "YellowGreen", "Teal"];
+var audio = new Audio("death.mp3");
 var resize = function() {
   width = window.innerWidth * 2;
   height = window.innerHeight * 2;
@@ -78,6 +79,7 @@ function update(progress) {
     }else if(balls[i].x < 0){
       balls.splice(i, 1);
       userScore -= 1;
+      audio.play();
     }
   }
   move();
