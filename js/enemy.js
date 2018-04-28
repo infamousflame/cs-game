@@ -1,5 +1,5 @@
 var enemyPaddle = {
-  size : 300,
+  size : 500,
   color: "white",
   y: 200
 }

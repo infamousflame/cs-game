@@ -63,7 +63,7 @@ function startScreen(){
   if(counter == 0){
     ctx.fillStyle = "white";
     ctx.font = "200px Arial";
-    ctx.fillText("Click the fuckin screen to start",0,height/2);
+    ctx.fillText("Click the darn screen to start",0,height/2);
     ctx.fillText("You win at 50 btw",0,height/1.5);
   }
 }
@@ -103,6 +103,7 @@ function update(progress) {
       if(collideBall.x < 30 && collidePaddle.y - collidePaddle.height < collideBall.y && collidePaddle.y + collidePaddle.height > collideBall.y){
         ball.xSpeed = -ball.xSpeed;
         spawnBall(colors[Math.floor((Math.random() * colors.length))]);
+        userPaddle.size = Math.floor((Math.random() * 600) + 200);
       }
       if(balls[i].x > width){
         balls.splice(i, 1);
